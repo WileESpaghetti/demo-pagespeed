@@ -22,6 +22,16 @@ function GruntConfig(grunt) {
 						dest: 'bin'
 					},
 
+					// Angular
+					{
+						src: [
+							'angular.min.js*'
+						],
+						expand: true,
+						cwd: 'node_modules/angular',
+						dest: 'bin/lib/angular'
+					},
+
 					// Bootstrap
 					{
 						src: [
