@@ -1,0 +1,26 @@
+{
+  "name": "demo-pagespeed",
+  "version": "1.0.0",
+  "description": "Angular application that demos the Google PageSpeed API",
+  "main": "index.html",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WileESpaghetti/demo-pagespeed.git"
+  },
+  "keywords": [
+    "pagespeed",
+    "performance",
+    "demo",
+    "api",
+    "angular"
+  ],
+  "author": "Lehman Black",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WileESpaghetti/demo-pagespeed/issues"
+  },
+  "homepage": "https://github.com/WileESpaghetti/demo-pagespeed#readme"
+}
