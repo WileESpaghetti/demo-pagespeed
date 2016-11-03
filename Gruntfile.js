@@ -9,13 +9,31 @@ function GruntConfig(grunt) {
 
 		copy: {
 			main: {
-				src: [
-					'**/*.html',
-					'js/**'
-				],
-				expand: true,
-				cwd: 'src',
-				dest: 'bin'
+				files: [
+
+					// Our stuff
+					{
+						src: [
+							'**/*.html',
+							'js/**'
+						],
+						expand: true,
+						cwd: 'src',
+						dest: 'bin'
+					},
+
+					// Bootstrap
+					{
+						src: [
+							'css/bootstrap.min.css*',
+							'js/bootstrap.min.js*',
+							'fonts/**'
+						],
+						expand: true,
+						cwd: 'node_modules/bootstrap/dist',
+						dest: 'bin/lib/bootstrap'
+					}
+				]
 			}
 		}
 	});
