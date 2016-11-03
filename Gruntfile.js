@@ -35,11 +35,27 @@ function GruntConfig(grunt) {
 					}
 				]
 			}
-		}
+		},
+
+		includeSource: {
+			options: {
+				basePath: 'bin/',
+				baseUrl: './'
+			},
+			angular: {
+				files: {
+					'bin/index.html': 'bin/index.html'
+				}
+			}
+		},
 	});
 
-	grunt.registerTask('default', ['copy']);
+	grunt.registerTask('default', [
+		'copy',
+		'includeSource'
+	]);
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-include-source');
 
 }
