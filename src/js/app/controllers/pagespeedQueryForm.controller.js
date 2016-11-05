@@ -6,5 +6,12 @@
 
 	function pagespeedQueryForm() {
 		var vm = this;
+
+		vm.url = '';
+		vm.submit = submit;
+
+		function submit() {
+			alert(this.url);
+		}
 	}
 })();
