@@ -2,16 +2,16 @@
 	'use strict';
 	angular.module('pagespeedApp').controller('pagespeedQueryFormController', pagespeedQueryForm);
 
-	pagespeedQueryForm.$inject = [];
+	pagespeedQueryForm.$inject = ['pagespeedApi'];
 
-	function pagespeedQueryForm() {
+	function pagespeedQueryForm(pagespeedApi) {
 		var vm = this;
 
 		vm.url = '';
 		vm.submit = submit;
 
 		function submit() {
-			alert(this.url);
+			pagespeedApi.run(vm.url);
 		}
 	}
 })();
