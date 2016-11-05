@@ -32,6 +32,16 @@ function GruntConfig(grunt) {
 						dest: 'bin/lib/angular'
 					},
 
+					// jQuery
+					{
+						src: [
+							'jquery.min.js*'
+						],
+						expand: true,
+						cwd: 'node_modules/jquery/dist',
+						dest: 'bin/lib/_jquery'
+					},
+
 					// Bootstrap
 					{
 						src: [
