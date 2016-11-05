@@ -5,8 +5,21 @@
 	pagespeedApi.$inject = [];
 
 	function pagespeedApi() {
-		var service = {};
+		var endpoint = 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed';
+		var options = {
+			key: ''
+		};
+
+		var service = {
+			endpoint: endpoint,
+			options: options,
+			run: run
+		};
 
 		return service;
+
+		function run(url, mobile, screenshot) {
+			alert(url)
+		}
 	}
 })();
