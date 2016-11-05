@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	angular.module('pagespeedApp').factory('pagespeedQueryForm', pagespeedQueryForm);
+	angular.module('pagespeedApp').controller('pagespeedQueryFormController', pagespeedQueryForm);
 
 	pagespeedQueryForm.$inject = [];
 
