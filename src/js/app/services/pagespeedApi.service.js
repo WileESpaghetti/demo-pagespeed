@@ -19,7 +19,14 @@
 		return service;
 
 		function run(url, mobile, screenshot) {
-			alert(url)
+			var params = {
+				url: url,
+				key: service.options.key
+			};
+
+			return $http.get(service.endpoint, {
+				params: params
+			});
 		}
 	}
 })();
