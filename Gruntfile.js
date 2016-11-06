@@ -39,7 +39,7 @@ function GruntConfig(grunt) {
 						],
 						expand: true,
 						cwd: 'node_modules/jquery/dist',
-						dest: 'bin/lib/_jquery'
+						dest: 'bin/lib/_jquery' // '_' is a hack to get jQuery to load before Bootstrap JS
 					},
 
 					// Bootstrap
