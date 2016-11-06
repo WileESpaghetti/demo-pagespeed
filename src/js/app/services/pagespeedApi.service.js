@@ -2,9 +2,9 @@
 	'use strict';
 	angular.module('pagespeedApp').factory('pagespeedApi', pagespeedApi);
 
-	pagespeedApi.$inject = [];
+	pagespeedApi.$inject = ['$http'];
 
-	function pagespeedApi() {
+	function pagespeedApi($http) {
 		var endpoint = 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed';
 		var options = {
 			key: ''
