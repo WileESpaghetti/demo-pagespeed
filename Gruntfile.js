@@ -68,14 +68,30 @@ function GruntConfig(grunt) {
 				}
 			}
 		},
+
+		ngtemplates:  {
+			app:        {
+				src:      'src/js/**/*.html',
+				dest:     'bin/js/app/pagespeed.templates.module.js',
+				options:  {
+					module: 'pagespeed.templates',
+					standalone: true,
+					url: function(url) {
+						return url.replace('src/', '');
+					}
+				}
+			}
+		}
 	});
 
 	grunt.registerTask('default', [
 		'copy',
-		'includeSource'
+		'includeSource',
+		'ngtemplates'
 	]);
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-include-source');
+	grunt.loadNpmTasks('grunt-angular-templates');
 
 }
