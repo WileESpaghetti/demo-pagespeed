@@ -7,5 +7,6 @@
 
     function pagespeedOptionsController(pagespeedApi) {
         var vm = this;
+        vm.options = pagespeedApi.options;
     }
 })();
