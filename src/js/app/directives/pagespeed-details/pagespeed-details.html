@@ -1,0 +1,41 @@
+<ul class="list-group">
+	<li class="list-group-item">
+		<span class="badge">19 files</span>
+		<div class="progress">
+			<div class="progress-bar progress-bar-success progress-bar-striped" style="width: 32%">
+				<!--<span class="sr-only" id="numberResources">JavaScript Resources</span>-->
+				<span id="numberResources">6 JS files</span>
+			</div>
+			<div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 21%">
+				<span class="sr-only" id="numberCssResources">CSS Resources</span>
+			</div>
+			<div class="progress-bar progress-bar-danger progress-bar-striped" title="Static Resources" style="width: 16%">
+				<span class="sr-only" title="Static Resources">Static Resources</span>
+			</div>
+		</div>
+	</li>
+	<li class="list-group-item">
+		<span class="badge" id="totalRequestBytes">{{pagespeedDetailsCtrl.data.pageStats.totalRequestBytes | bytes}}</span>
+		Total request bytes
+	</li>
+	<li class="list-group-item">
+		<span class="badge" id="htmlResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.htmlResponseBytes | bytes}}</span>
+		HTML response bytes
+	</li>
+	<li class="list-group-item">
+		<span class="badge" id="cssResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.cssResponseBytes | bytes}}</span>
+		CSS response bytes
+	</li>
+	<li class="list-group-item">
+		<span class="badge" id="imageResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.imageResponseBytes | bytes}}</span>
+		Image response bytes
+	</li>
+	<li class="list-group-item">
+		<span class="badge" id="javascriptResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.javascriptResponseBytes | bytes}}</span>
+		JavaScript response bytes
+	</li>
+	<li class="list-group-item">
+		<span class="badge" id="otherResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.otherResponseBytes | bytes}}</span>
+		Other response bytes
+	</li>
+</ul>
