@@ -1,0 +1,12 @@
+<form id="pagespeed-query-form" >
+	<div class="form-group">
+		<div class="input-group">
+			<label class="input-group-addon">Check PageSpeed ranking for...</label>
+			<input id="pagespeed-query" class="form-control" type="url" placeholder="http://www.lehmanblack.com" ng-model="form.url">
+			<span class="input-group-btn">
+				<button class="btn btn-primary" type="submit" ng-click="form.submit()" ng-disabled="form.canNotSubmit()">Get PageSpeed</button>
+			</span>
+		</div>
+	</div>
+	<pagespeed-options></pagespeed-options>
+</form>
