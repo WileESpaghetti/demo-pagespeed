@@ -3,9 +3,9 @@
 
     angular.module('pagespeedApp').controller('pagespeedOptionsController', pagespeedOptionsController);
 
-    pagespeedOptionsController.$inject = [];
+    pagespeedOptionsController.$inject = ['pagespeedApi'];
 
-    function pagespeedOptionsController() {
+    function pagespeedOptionsController(pagespeedApi) {
         var vm = this;
     }
 })();
