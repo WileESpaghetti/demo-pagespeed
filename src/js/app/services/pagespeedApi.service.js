@@ -26,7 +26,7 @@
 			return service.cache[host] ? Promise.resolve(service.cache[host]) : service.run(url);
 		}
 
-		function run(url, mobile, screenshot) {
+		function run(url) {
 			var params = {
 				url: url,
 				key: service.options.key
@@ -39,7 +39,6 @@
 
 		function cacheResponse(url) {
 			return function(data) {
-				console.log(data);
 				var requestHost = new URL(url).host;
 				var resolveHost = new URL(data.data.id).host;
 
