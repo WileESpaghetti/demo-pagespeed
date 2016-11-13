@@ -9,14 +9,22 @@
 		var options = {
 			key: ''
 		};
+		var cache = {};
 
 		var service = {
+			cache: cache,
 			endpoint: endpoint,
 			options: options,
+			get: get,
 			run: run
 		};
 
 		return service;
+
+		function get(url) {
+			var host = new URL(url).host;
+			return service.cache[host] ? Promise.resolve(service.cache[host]) : service.run(url);
+		}
 
 		function run(url, mobile, screenshot) {
 			var params = {
@@ -26,7 +34,23 @@
 
 			return $http.get(service.endpoint, {
 				params: params
-			});
+			}).then(cacheResponse(url));
+		}
+
+		function cacheResponse(url) {
+			return function(data) {
+				console.log(data);
+				var requestHost = new URL(url).host;
+				var resolveHost = new URL(data.data.id).host;
+
+				service.cache[resolveHost] = data;
+
+				if (requestHost != resolveHost) {
+					service.cache[requestHost] = data;
+				}
+
+				return data;
+			};
 		}
 	}
 })();
