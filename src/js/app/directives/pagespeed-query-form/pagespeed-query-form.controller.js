@@ -12,9 +12,7 @@
 		vm.canNotSubmit = canNotSubmit;
 
 		function submit() {
-			pagespeedApi.get(vm.url).then(function (data) {
-				vm.pagespeedResults = data.data;
-			});
+			pagespeedApi.get(vm.url);
 		}
 
 		function canNotSubmit() {
