@@ -86,8 +86,8 @@ function GruntConfig(grunt) {
 
 	grunt.registerTask('default', [
 		'copy',
-		'includeSource',
-		'ngtemplates'
+		'ngtemplates',
+		'includeSource'
 	]);
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
