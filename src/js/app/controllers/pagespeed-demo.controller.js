@@ -2,9 +2,11 @@
 	'use strict';
 	angular.module('pagespeedApp').controller('pagespeedDemoController', pagespeedDemoController);
 
-	pagespeedDemoController.$inject = [];
+	pagespeedDemoController.$inject = ['pagespeedApi'];
 
-	function pagespeedDemoController() {
+	function pagespeedDemoController(pagespeedApi) {
 		var vm = this;
+
+		vm.pagespeed = pagespeedApi.latest;
 	}
 })();
