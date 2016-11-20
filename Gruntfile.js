@@ -7,6 +7,24 @@ function GruntConfig(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		concat: {
+			options: {
+				sourceMap: true
+			},
+			js: {
+				src: [
+					'src/js/**/*module.js',
+					'src/js/**/*service.js',
+					'src/js/**/*filter.js',
+					'src/js/**/*controller.js',
+					'src/js/**/*directive.js',
+					//'src/js/**/*.js',
+					'!**/*.spec.js'
+				],
+				dest: 'bin/js/app/<%= pkg.name %>-<%= pkg.version %>.js'
+			}
+		},
+
 		copy: {
 			main: {
 				files: [
@@ -15,7 +33,7 @@ function GruntConfig(grunt) {
 					{
 						src: [
 							'**/*.html',
-							'js/**'
+							//'js/**'
 						],
 						expand: true,
 						cwd: 'src',
@@ -85,11 +103,13 @@ function GruntConfig(grunt) {
 	});
 
 	grunt.registerTask('default', [
+		'concat',
 		'copy',
 		'ngtemplates',
 		'includeSource'
 	]);
 
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-include-source');
 	grunt.loadNpmTasks('grunt-angular-templates');
