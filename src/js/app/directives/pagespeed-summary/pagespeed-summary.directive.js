@@ -11,7 +11,7 @@
                 host: '='
             },
             controller: 'pagespeedSummaryController',
-            controllerAs: 'pagespeedSummaryCtrl',
+            controllerAs: 'summary',
             bindToController: true
         };
     }
