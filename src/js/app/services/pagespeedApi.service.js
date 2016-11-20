@@ -10,10 +10,12 @@
 			key: ''
 		};
 		var cache = {};
+		var latest = {};
 
 		var service = {
 			cache: cache,
 			endpoint: endpoint,
+			latest: latest,
 			options: options,
 			get: get,
 			run: run
@@ -34,22 +36,31 @@
 
 			return $http.get(service.endpoint, {
 				params: params
-			}).then(cacheResponse(url));
+			})
+				.then(cacheResponse(url))
+				.then(setLatest);
 		}
 
 		function cacheResponse(url) {
-			return function(data) {
+			return function(response) {
 				var requestHost = new URL(url).host;
-				var resolveHost = new URL(data.data.id).host;
+				var resolveHost = new URL(response.data.id).host;
+				var pagespeed = response.data;
 
-				service.cache[resolveHost] = data;
+				service.cache[resolveHost] = pagespeed;
 
 				if (requestHost != resolveHost) {
-					service.cache[requestHost] = data;
+					service.cache[requestHost] = pagespeed;
 				}
 
-				return data;
+				return pagespeed;
 			};
+		}
+
+		function setLatest(pagespeed) {
+			service.latest.host = new URL(pagespeed.id).host;
+			service.latest.data = pagespeed;
+			return pagespeed;
 		}
 	}
 })();
