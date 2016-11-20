@@ -15,27 +15,27 @@
 		</div>
 	</li>
 	<li class="list-group-item">
-		<span class="badge" id="totalRequestBytes">{{pagespeedDetailsCtrl.data.pageStats.totalRequestBytes | bytes}}</span>
+		<span class="badge" id="totalRequestBytes">{{details.pagespeed.pageStats.totalRequestBytes | bytes}}</span>
 		Total request bytes
 	</li>
 	<li class="list-group-item">
-		<span class="badge" id="htmlResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.htmlResponseBytes | bytes}}</span>
+		<span class="badge" id="htmlResponseBytes">{{details.pagespeed.pageStats.htmlResponseBytes | bytes}}</span>
 		HTML response bytes
 	</li>
 	<li class="list-group-item">
-		<span class="badge" id="cssResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.cssResponseBytes | bytes}}</span>
+		<span class="badge" id="cssResponseBytes">{{details.pagespeed.pageStats.cssResponseBytes | bytes}}</span>
 		CSS response bytes
 	</li>
 	<li class="list-group-item">
-		<span class="badge" id="imageResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.imageResponseBytes | bytes}}</span>
+		<span class="badge" id="imageResponseBytes">{{details.pagespeed.pageStats.imageResponseBytes | bytes}}</span>
 		Image response bytes
 	</li>
 	<li class="list-group-item">
-		<span class="badge" id="javascriptResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.javascriptResponseBytes | bytes}}</span>
+		<span class="badge" id="javascriptResponseBytes">{{details.pagespeed.pageStats.javascriptResponseBytes | bytes}}</span>
 		JavaScript response bytes
 	</li>
 	<li class="list-group-item">
-		<span class="badge" id="otherResponseBytes">{{pagespeedDetailsCtrl.data.pageStats.otherResponseBytes | bytes}}</span>
+		<span class="badge" id="otherResponseBytes">{{details.pagespeed.pageStats.otherResponseBytes | bytes}}</span>
 		Other response bytes
 	</li>
 </ul>

@@ -7,18 +7,18 @@
         return {
             bindToController: true,
             controller:       'pagespeedDetailsController',
-            controllerAs:     'pagespeedDetailsCtrl',
+            controllerAs:     'details',
             link:             link,
             require:          ['pagespeedDetails', '^pagespeedSummary'],
             restrict:         'E',
             scope:            {},
-            templateUrl:      'js/app/directives/pagespeed-details/pagespeed-details.html',
+            templateUrl:      'js/app/directives/pagespeed-details/pagespeed-details.html'
         };
 
         function link(scope, element, attrs, ctrls) {
             var pagespeedDetails  = ctrls[0];
             var pagespeedSummary  = ctrls[1];
-            pagespeedDetails.data = pagespeedSummary.data;
+            pagespeedDetails.pagespeed = pagespeedSummary.pagespeed;
 		}
     }
 })();
