@@ -119,8 +119,8 @@ function GruntConfig(grunt) {
 		'concat',
 		'copy',
 		'ngtemplates',
-		'includeSource',
-		'uglify'
+		'uglify',
+		'includeSource'
 	]);
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
