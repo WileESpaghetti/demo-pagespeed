@@ -30,7 +30,7 @@
 	<!-- /include -->
 
 </head>
-<body>
+<body ng-controller="pagespeedDemoController as demo">
 	<header class="page-header">
 		<h1>Google PageSpeed Insights Demo by Lehman Black</h1>
 	</header>
@@ -46,7 +46,7 @@
 	<!--<div class="alert alert-success" role="alert">PageSpeed information fetched successfully!</div>-->
 	<div class="row">
 		<div class="col-md-4">
-			<pagespeed-summary host="form.pagespeedResults.data.id" data="form.pagespeedResults" ng-if="form.pagespeedResults"></pagespeed-summary>
+			<pagespeed-summary host="demo.pagespeed.host" ng-if="demo.pagespeed.host"></pagespeed-summary>
 		</div>
 	</div>
 </body>
