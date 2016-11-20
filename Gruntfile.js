@@ -99,6 +99,19 @@ function GruntConfig(grunt) {
 					}
 				}
 			}
+		},
+
+		uglify: {
+			options: {
+				sourceMap: true
+			},
+			prod: {
+				files: {
+					'bin/js/app/<%= pkg.name %>-<%= pkg.version %>.min.js': [
+						'bin/js/app/<%= pkg.name %>-<%= pkg.version %>.js'
+					]
+				}
+			}
 		}
 	});
 
@@ -106,11 +119,13 @@ function GruntConfig(grunt) {
 		'concat',
 		'copy',
 		'ngtemplates',
-		'includeSource'
+		'includeSource',
+		'uglify'
 	]);
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-include-source');
 	grunt.loadNpmTasks('grunt-angular-templates');
 
