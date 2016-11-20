@@ -8,7 +8,7 @@
             templateUrl: 'js/app/directives/pagespeed-summary/pagespeed-summary.html',
             restrict: 'E',
             scope: {
-                data: '='
+                host: '='
             },
             controller: 'pagespeedSummaryController',
             controllerAs: 'pagespeedSummaryCtrl',
