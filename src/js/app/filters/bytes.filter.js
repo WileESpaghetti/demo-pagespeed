@@ -2,7 +2,7 @@
  * @author Thom Seddon
  * https://gist.github.com/thomseddon/3511330
  */
-(function() {
+;(function() {
 	'use strict';
 	angular.module('pagespeedApp')
 		.filter('bytes', function() {
