@@ -32,7 +32,8 @@ function GruntConfig(grunt) {
 					// Our stuff
 					{
 						src: [
-							'**/*.html',
+							'index.html'
+							//'**/*.html',
 							//'js/**'
 						],
 						expand: true,
