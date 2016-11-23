@@ -95,6 +95,17 @@ function GruntConfig(grunt) {
 				options:  {
 					module: 'pagespeed.templates',
 					standalone: true,
+					htmlmin: {
+						collapseBooleanAttributes:      true,
+						collapseWhitespace:             true,
+						keepClosingSlash:               false,
+						removeAttributeQuotes:          true,
+						removeComments:                 true,
+						removeEmptyAttributes:          true,
+						removeRedundantAttributes:      true,
+						removeScriptTypeAttributes:     true,
+						removeStyleLinkTypeAttributes:  false
+					},
 					url: function(url) {
 						return url.replace('src/', '');
 					}
